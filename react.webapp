@@ -1,0 +1,349 @@
+import React, { useState } from 'react';
+
+const departments = [
+  { value: '', label: 'Select Department' },
+  { value: 'computer-science', label: 'Computer Science' },
+  { value: 'mathematics', label: 'Mathematics' },
+  { value: 'physics', label: 'Physics' },
+  { value: 'chemistry', label: 'Chemistry' },
+  { value: 'biology', label: 'Biology' }
+];
+
+const semesters = [
+  { value: '', label: 'Select Semester' },
+  { value: '1', label: 'Semester 1' },
+  { value: '2', label: 'Semester 2' },
+  { value: '3', label: 'Semester 3' },
+  { value: '4', label: 'Semester 4' },
+  { value: '5', label: 'Semester 5' },
+  { value: '6', label: 'Semester 6' },
+  { value: '7', label: 'Semester 7' },
+  { value: '8', label: 'Semester 8' }
+];
+
+const StudentForm = () => {
+  const [formData, setFormData] = useState({ studentId: '', department: '', semester: '' });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.studentId.trim()) newErrors.studentId = 'Student ID is required!';
+    if (!formData.department) newErrors.department = 'Please select a department!';
+    if (!formData.semester) newErrors.semester = 'Please select a semester!';
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    try {
+      const response = await fetch('/api/student-info', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setSubmitMessage('Student info submitted successfully!');
+        setFormData({ studentId: '', department: '', semester: '' });
+      } else throw new Error();
+    } catch (error) {
+      setSubmitMessage('Oops! Something went wrong. Try again!');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="form-container">
+      <style jsx>{`
+        .form-container {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+          background-size: 400% 400%;
+          animation: gradientShift 15s ease infinite;
+          padding: 20px;
+          font-family: 'Comic Sans MS', 'Arial', sans-serif;
+          color: #333;
+          position: relative;
+          overflow: hidden;
+        }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .cartoon-character {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          width: 80px;
+          height: 100px;
+          animation: run 1s steps(4) infinite, bounce 2s ease-in-out infinite;
+        }
+        .head {
+          width: 40px;
+          height: 40px;
+          background: #ffd700;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 20px;
+          border: 3px solid #333;
+          animation: bob 1s ease-in-out infinite alternate;
+        }
+        .body {
+          width: 30px;
+          height: 40px;
+          background: #4ecdc4;
+          position: absolute;
+          top: 40px;
+          left: 25px;
+          border-radius: 10px 10px 20px 20px;
+          border: 2px solid #333;
+        }
+        .arm-left, .arm-right {
+          width: 15px;
+          height: 25px;
+          background: #ffd700;
+          position: absolute;
+          top: 45px;
+          border-radius: 5px;
+          border: 2px solid #333;
+        }
+        .arm-left { left: 15px; transform-origin: right center; animation: swing 0.5s ease-in-out infinite alternate; }
+        .arm-right { right: 15px; transform-origin: left center; animation: swing 0.5s ease-in-out infinite alternate-reverse; }
+        .leg-left, .leg-right {
+          width: 12px;
+          height: 30px;
+          background: #ff6b6b;
+          position: absolute;
+          top: 75px;
+          border-radius: 5px;
+          border: 2px solid #333;
+        }
+        .leg-left { left: 25px; transform-origin: top center; animation: kick 0.5s ease-in-out infinite alternate; }
+        .leg-right { right: 25px; transform-origin: top center; animation: kick 0.5s ease-in-out infinite alternate-reverse; }
+        @keyframes run { 0% { transform: translateX(0); } 100% { transform: translateX(20px); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes bob { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
+        @keyframes swing { 0% { transform: rotate(-30deg); } 100% { transform: rotate(30deg); } }
+        @keyframes swing-reverse { 0% { transform: rotate(30deg); } 100% { transform: rotate(-30deg); } }
+        @keyframes kick { 0% { transform: rotate(-20deg); } 100% { transform: rotate(20deg); } }
+        @keyframes kick-reverse { 0% { transform: rotate(20deg); } 100% { transform: rotate(-20deg); } }
+        .floating-cloud {
+          position: absolute;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 50px;
+          animation: drift 20s linear infinite;
+          pointer-events: none;
+        }
+        .cloud-1 { width: 60px; height: 30px; top: 10%; left: -60px; animation-delay: 0s; }
+        .cloud-2 { width: 80px; height: 40px; top: 30%; left: -80px; animation-delay: 5s; }
+        .cloud-3 { width: 50px; height: 25px; top: 60%; left: -50px; animation-delay: 10s; }
+        @keyframes drift { 0% { transform: translateX(0); } 100% { transform: translateX(calc(100vw + 100px)); } }
+        .form-wrapper {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 100%;
+          animation: slideInUp 0.8s ease-out;
+          border: 2px solid #fff;
+          position: relative;
+          z-index: 1;
+        }
+        @keyframes slideInUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        h1 {
+          text-align: center;
+          color: #ff6b6b;
+          margin-bottom: 30px;
+          font-size: 2.5em;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+          animation: wiggle 3s ease-in-out infinite;
+          font-family: 'Comic Sans MS', cursive;
+        }
+        @keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+        .form-group {
+          margin-bottom: 25px;
+          position: relative;
+        }
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: bold;
+          color: #4ecdc4;
+          font-size: 1.1em;
+          font-family: 'Comic Sans MS', sans-serif;
+        }
+        input, select {
+          width: 100%;
+          padding: 15px;
+          border: 2px solid #ddd;
+          border-radius: 15px;
+          font-size: 1em;
+          transition: all 0.3s ease;
+          background: linear-gradient(145deg, #ffffff, #f0f0f0);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+          font-family: 'Comic Sans MS', sans-serif;
+        }
+        input::placeholder {
+          color: #96ceb4;
+          font-style: italic;
+          font-family: 'Comic Sans MS', sans-serif;
+        }
+        input:focus, select:focus {
+          outline: none;
+          border-color: #4ecdc4;
+          transform: scale(1.02) rotate(1deg);
+          box-shadow: 0 0 15px rgba(78, 205, 196, 0.4);
+          animation: glow 0.5s ease-in-out;
+        }
+        @keyframes glow { 0% { box-shadow: 0 0 5px rgba(78, 205, 196, 0.2); } 100% { box-shadow: 0 0 15px rgba(78, 205, 196, 0.4); } }
+        .error {
+          color: #ff4757;
+          font-size: 0.9em;
+          margin-top: 5px;
+          animation: shake 0.5s ease-in-out;
+          font-family: 'Comic Sans MS', sans-serif;
+        }
+        @keyframes shake { 0%, 100% { transform: translateX(0) rotate(0deg); } 25% { transform: translateX(-5px) rotate(-2deg); } 75% { transform: translateX(5px) rotate(2deg); } }
+        button {
+          width: 100%;
+          padding: 15px;
+          background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+          color: white;
+          border: none;
+          border-radius: 15px;
+          font-size: 1.2em;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+          font-family: 'Comic Sans MS', sans-serif;
+          animation: pulse-button 2s infinite;
+        }
+        @keyframes pulse-button { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        button:hover:not(:disabled) {
+          transform: translateY(-2px) scale(1.05);
+          box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+          animation: none;
+        }
+        button:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+          animation: none;
+        }
+        .submit-message {
+          margin-top: 20px;
+          padding: 15px;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+          animation: popIn 0.6s ease-out;
+          font-family: 'Comic Sans MS', sans-serif;
+        }
+        @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+        .success {
+          background: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+        }
+        .error-message {
+          background: #f8d7da;
+          color: #721c24;
+          border: 1px solid #f5c6cb;
+        }
+        @media (max-width: 480px) {
+          .form-wrapper { padding: 20px; margin: 10px; }
+          h1 { font-size: 2em; }
+          input, select, button { padding: 12px; font-size: 1em; }
+          .cartoon-character { width: 60px; height: 80px; }
+          .floating-cloud { display: none; }
+        }
+      `}</style>
+
+      <div className="cartoon-character">
+        <div className="head"></div>
+        <div className="body"></div>
+        <div className="arm-left"></div>
+        <div className="arm-right" style={{animationName: 'swing-reverse'}}></div>
+        <div className="leg-left"></div>
+        <div className="leg-right" style={{animationName: 'kick-reverse'}}></div>
+      </div>
+
+      <div className="floating-cloud cloud-1"></div>
+      <div className="floating-cloud cloud-2"></div>
+      <div className="floating-cloud cloud-3"></div>
+
+      <div className="form-wrapper">
+        <h1>Student Dash!</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="studentId">Student ID</label>
+            <input
+              type="text"
+              id="studentId"
+              name="studentId"
+              value={formData.studentId}
+              onChange={handleChange}
+              placeholder="Enter your Student ID"
+            />
+            {errors.studentId && <div className="error">{errors.studentId}</div>}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="department">Department</label>
+            <select id="department" name="department" value={formData.department} onChange={handleChange}>
+              {departments.map((dept) => (
+                <option key={dept.value} value={dept.value}>{dept.label}</option>
+              ))}
+            </select>
+            {errors.department && <div className="error">{errors.department}</div>}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="semester">Semester</label>
+            <select id="semester" name="semester" value={formData.semester} onChange={handleChange}>
+              {semesters.map((sem) => (
+                <option key={sem.value} value={sem.value}>{sem.label}</option>
+              ))}
+            </select>
+            {errors.semester && <div className="error">{errors.semester}</div>}
+          </div>
+
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit Adventure!'}
+          </button>
+        </form>
+
+        {submitMessage && (
+          <div className={`submit-message ${submitMessage.includes('successfully') ? 'success' : 'error-message'}`}>
+            {submitMessage}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default StudentForm;
