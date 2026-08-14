@@ -1,15 +1,15 @@
-# 🧭 ANUGAMI — Navigation Guide
+🧭 ANUGAMI — Navigation Guide
 
 ANUGAMI is a smart navigation guide designed to help users find, explore, and navigate to important places with ease. The project focuses on providing a simple, user-friendly interface for discovering locations and getting clear navigation guidance.
 
-## 🚀 Features
-* 🗺️ **Interactive Navigation** — Helps users navigate between locations.
-* 📍 **Location Discovery** — Find important places and destinations.
-* 🔎 **Search** — Search for a specific location or place.
-* 🧭 **Route Guidance** — Provides directions from the current/source location to the destination.
-* 📱 **User-Friendly Interface** — Simple and intuitive design.
-* ⚡ **Fast & Responsive** — Designed to work smoothly across different screen sizes.
-* 📌 **Location Details** — Displays useful information about selected destinations.
+🚀 Features
+* 🗺️ Interactive Navigation — Helps users navigate between locations.
+* 📍 Location Discovery — Find important places and destinations.
+* 🔎 Search — Search for a specific location or place.
+* 🧭 Route Guidance — Provides directions from the current/source location to the destination.
+* 📱 User-Friendly Interface — Simple and intuitive design.
+* ⚡ Fast & Responsive — Designed to work smoothly across different screen sizes.
+* 📌 Location Details— Displays useful information about selected destinations.
 
 ## 🎯 Objective
 The main objective of **ANUGAMI** is to simplify navigation by providing users with an accessible digital guide for finding locations and reaching their destinations efficiently.
