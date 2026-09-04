@@ -22,7 +22,7 @@ A smart navigation guide designed to help users find, explore, and navigate to i
 
 The main objective of **ANUGAMI** is to simplify navigation by providing users with an accessible digital guide for finding locations and reaching their destinations efficiently.
 
----
+
 
 ## 🚀 Features
 
@@ -36,7 +36,7 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 | ⚡ **Fast & Responsive** | Designed to work smoothly across different screen sizes |
 | 📌 **Location Details** | Displays useful information about selected destinations |
 
----
+
 
 ## 🛠️ Technology Stack
 
@@ -52,7 +52,7 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 
 > The backend and database layers are optional and only needed if ANUGAMI is extended with features like saved locations, user accounts, or route history.
 
----
+
 
 ## 🔄 How It Works
 
@@ -83,7 +83,7 @@ ANUGAMI/
 ├── package.json
 ├── README.md
 └── .gitignore
-```
+
 
 ### File Responsibilities
 
@@ -98,7 +98,7 @@ ANUGAMI/
 | `src/index.css` | Global styles |
 | `package.json` | Project dependencies and scripts |
 
----
+
 
 ## ⚙️ Installation & Setup
 
@@ -144,7 +144,7 @@ npm run dev
 
 The application will be available at the local URL displayed in the terminal (typically `http://localhost:5173`).
 
----
+
 
 ## 🧑‍💻 Usage
 
@@ -155,7 +155,7 @@ The application will be available at the local URL displayed in the terminal (ty
 5. Choose the navigation option.
 6. Follow the displayed route to reach the destination.
 
----
+
 
 ## 🌟 Future Enhancements
 
@@ -170,7 +170,6 @@ The application will be available at the local URL displayed in the terminal (ty
 - [ ] Mobile application
 - [ ] AI-based route recommendations
 
----
 
 ## 🔐 Security & Privacy
 
@@ -181,7 +180,6 @@ ANUGAMI handles location-related information responsibly:
 - API keys and sensitive configuration should be stored in environment variables, never committed to version control.
 - No location data should be shared with third parties beyond what's required for the chosen Maps API provider.
 
----
 
 ## 🤝 Contributing
 
@@ -203,13 +201,12 @@ Open a Pull Request
 
 When contributing, please keep changes focused, follow the existing project structure, and confirm existing functionality still works before opening a PR.
 
----
 
 ## 📄 License
 
 This project is developed for **educational and project purposes**. A suitable open-source license can be added based on the project's requirements.
 
----
+
 
 ## 👨‍💻 Project Info
 
@@ -219,7 +216,7 @@ This project is developed for **educational and project purposes**. A suitable o
 | **Type** | Navigation Guide |
 | **Purpose** | Smart and user-friendly location discovery and navigation |
 
----
+
 
 <div align="center">
 
