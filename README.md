@@ -16,13 +16,9 @@ A smart navigation guide designed to help users find, explore, and navigate to i
 
 </div>
 
----
-
 ## 🎯 Objective
 
 The main objective of **ANUGAMI** is to simplify navigation by providing users with an accessible digital guide for finding locations and reaching their destinations efficiently.
-
-
 
 ## 🚀 Features
 
@@ -35,8 +31,6 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 | 📱 **User-Friendly Interface** | Simple and intuitive design |
 | ⚡ **Fast & Responsive** | Designed to work smoothly across different screen sizes |
 | 📌 **Location Details** | Displays useful information about selected destinations |
-
-
 
 ## 🛠️ Technology Stack
 
@@ -52,22 +46,16 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 
 > The backend and database layers are optional and only needed if ANUGAMI is extended with features like saved locations, user accounts, or route history.
 
-
-
 ## 🔄 How It Works
 
-```text
 ┌─────────────┐     ┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
 │   Search    │ ──▶ │   Select    │ ──▶ │  View Location    │ ──▶ │   Follow    │
 │ Destination │     │  Location   │     │     Details       │     │    Route    │
 └─────────────┘     └─────────────┘     └──────────────────┘     └─────────────┘
-```
 
----
 
 ## 📂 Project Structure
 
-```text
 ANUGAMI/
 │
 ├── public/
@@ -111,40 +99,17 @@ ANUGAMI/
 
 ### 1. Clone the Repository
 
-```bash
-git clone <repository-url>
-```
-
 ### 2. Navigate to the Project
 
-```bash
-cd ANUGAMI
-```
-
 ### 3. Install Dependencies
-
-```bash
-npm install
-```
 
 ### 4. Configure Environment Variables *(if applicable)*
 
 Create a `.env` file in the project root and add your Maps API key and any backend configuration:
 
-```env
-VITE_MAPS_API_KEY=your_api_key_here
-VITE_API_BASE_URL=http://localhost:5000
-```
-
 ### 5. Start the Development Server
 
-```bash
-npm run dev
-```
-
 The application will be available at the local URL displayed in the terminal (typically `http://localhost:5173`).
-
-
 
 ## 🧑‍💻 Usage
 
@@ -154,8 +119,6 @@ The application will be available at the local URL displayed in the terminal (ty
 4. View the available location information.
 5. Choose the navigation option.
 6. Follow the displayed route to reach the destination.
-
-
 
 ## 🌟 Future Enhancements
 
@@ -185,7 +148,6 @@ ANUGAMI handles location-related information responsibly:
 
 Contributions are welcome!
 
-```text
 Fork Repository
       ↓
 Create a New Branch
@@ -197,7 +159,6 @@ Commit Your Changes
 Push the Branch
       ↓
 Open a Pull Request
-```
 
 When contributing, please keep changes focused, follow the existing project structure, and confirm existing functionality still works before opening a PR.
 
