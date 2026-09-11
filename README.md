@@ -1,7 +1,5 @@
 <div align="center">
-
 # 🧭 ANUGAMI — Navigation Guide
-
 **Find your destination. Follow your path.**
 
 A smart navigation guide designed to help users find, explore, and navigate to important places with ease. ANUGAMI focuses on a simple, user-friendly interface for discovering locations and getting clear, reliable navigation guidance.
@@ -11,17 +9,13 @@ A smart navigation guide designed to help users find, explore, and navigate to i
 [![Node.js](https://img.shields.io/badge/Node.js-Optional-339933?style=flat&logo=node.js&logoColor=white)](#-technology-stack)
 [![Maps API](https://img.shields.io/badge/Maps-API-4285F4?style=flat&logo=googlemaps&logoColor=white)](#-technology-stack)
 [![License](https://img.shields.io/badge/License-Educational-green)](#-license)
-
 [Features](#-features) • [Tech Stack](#-technology-stack) • [Setup](#-installation--setup) • [Usage](#-usage) • [Roadmap](#-future-enhancements)
-
 </div>
 
 ## 🎯 Objective
-
 The main objective of **ANUGAMI** is to simplify navigation by providing users with an accessible digital guide for finding locations and reaching their destinations efficiently.
 
 ## 🚀 Features
-
 | Feature | Description |
 | --- | --- |
 | 🗺️ **Interactive Navigation** | Helps users navigate between locations |
@@ -33,7 +27,6 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 | 📌 **Location Details** | Displays useful information about selected destinations |
 
 ## 🛠️ Technology Stack
-
 | Layer | Technology |
 | --- | --- |
 | **Frontend** | React.js / HTML / CSS / JavaScript |
@@ -55,7 +48,6 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 
 
 ## 📂 Project Structure
-
 ANUGAMI/
 │
 ├── public/
@@ -91,7 +83,6 @@ ANUGAMI/
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
-
 - [Node.js](https://nodejs.org/) (v16 or later recommended)
 - npm or yarn
 - A Maps API key (e.g. Google Maps, Mapbox) if map features are enabled
@@ -112,7 +103,6 @@ Create a `.env` file in the project root and add your Maps API key and any backe
 The application will be available at the local URL displayed in the terminal (typically `http://localhost:5173`).
 
 ## 🧑‍💻 Usage
-
 1. Open **ANUGAMI** in your browser.
 2. Search for the required destination.
 3. Select the desired location.
@@ -121,7 +111,6 @@ The application will be available at the local URL displayed in the terminal (ty
 6. Follow the displayed route to reach the destination.
 
 ## 🌟 Future Enhancements
-
 - [ ] Real-time GPS tracking
 - [ ] Voice-based navigation
 - [ ] Offline maps
@@ -135,9 +124,7 @@ The application will be available at the local URL displayed in the terminal (ty
 
 
 ## 🔐 Security & Privacy
-
 ANUGAMI handles location-related information responsibly:
-
 - User location data is only accessed when required for navigation features.
 - Location access is requested with clear, explicit user permission.
 - API keys and sensitive configuration should be stored in environment variables, never committed to version control.
@@ -162,25 +149,16 @@ Open a Pull Request
 
 When contributing, please keep changes focused, follow the existing project structure, and confirm existing functionality still works before opening a PR.
 
-
 ## 📄 License
-
 This project is developed for **educational and project purposes**. A suitable open-source license can be added based on the project's requirements.
 
-
-
 ## 👨‍💻 Project Info
-
 | Property | Details |
 | --- | --- |
 | **Project Name** | ANUGAMI |
 | **Type** | Navigation Guide |
 | **Purpose** | Smart and user-friendly location discovery and navigation |
 
-
-
 <div align="center">
-
 **ANUGAMI — Find your destination. Follow your path.**
-
 </div>
