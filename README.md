@@ -39,13 +39,13 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 
 > The backend and database layers are optional and only needed if ANUGAMI is extended with features like saved locations, user accounts, or route history.
 
+
 ## 🔄 How It Works
 
 ┌─────────────┐     ┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
 │   Search    │ ──▶ │   Select    │ ──▶ │  View Location    │ ──▶ │   Follow    │
 │ Destination │     │  Location   │     │     Details       │     │    Route    │
 └─────────────┘     └─────────────┘     └──────────────────┘     └─────────────┘
-
 
 ## 📂 Project Structure
 ANUGAMI/
@@ -64,9 +64,7 @@ ANUGAMI/
 ├── README.md
 └── .gitignore
 
-
 ### File Responsibilities
-
 | File / Directory | Purpose |
 | --- | --- |
 | `public/` | Static assets served directly (favicon, index.html, etc.) |
@@ -78,10 +76,7 @@ ANUGAMI/
 | `src/index.css` | Global styles |
 | `package.json` | Project dependencies and scripts |
 
-
-
 ## ⚙️ Installation & Setup
-
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v16 or later recommended)
 - npm or yarn
@@ -122,7 +117,6 @@ The application will be available at the local URL displayed in the terminal (ty
 - [ ] Mobile application
 - [ ] AI-based route recommendations
 
-
 ## 🔐 Security & Privacy
 ANUGAMI handles location-related information responsibly:
 - User location data is only accessed when required for navigation features.
@@ -132,9 +126,7 @@ ANUGAMI handles location-related information responsibly:
 
 
 ## 🤝 Contributing
-
 Contributions are welcome!
-
 Fork Repository
       ↓
 Create a New Branch
@@ -158,7 +150,6 @@ This project is developed for **educational and project purposes**. A suitable o
 | **Project Name** | ANUGAMI |
 | **Type** | Navigation Guide |
 | **Purpose** | Smart and user-friendly location discovery and navigation |
-
 <div align="center">
 **ANUGAMI — Find your destination. Follow your path.**
 </div>
