@@ -39,7 +39,6 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 
 > The backend and database layers are optional and only needed if ANUGAMI is extended with features like saved locations, user accounts, or route history.
 
-
 ## 🔄 How It Works
 
 ┌─────────────┐     ┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
