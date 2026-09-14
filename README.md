@@ -94,7 +94,7 @@ Create a `.env` file in the project root and add your Maps API key and any backe
 
 ### 5. Start the Development Server
 
-The application will be available at the local URL displayed in the terminal (typically `http://localhost:5173`).
+The application will be available at the local URL displayed in the terminal
 
 ## 🧑‍💻 Usage
 1. Open **ANUGAMI** in your browser.
@@ -122,7 +122,6 @@ ANUGAMI handles location-related information responsibly:
 - Location access is requested with clear, explicit user permission.
 - API keys and sensitive configuration should be stored in environment variables, never committed to version control.
 - No location data should be shared with third parties beyond what's required for the chosen Maps API provider.
-
 
 ## 🤝 Contributing
 Contributions are welcome!
