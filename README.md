@@ -25,7 +25,7 @@ The main objective of **ANUGAMI** is to simplify navigation by providing users w
 | 📱 **User-Friendly Interface** | Simple and intuitive design |
 | ⚡ **Fast & Responsive** | Designed to work smoothly across different screen sizes |
 | 📌 **Location Details** | Displays useful information about selected destinations |
-
+ 
 ## 🛠️ Technology Stack
 | Layer | Technology |
 | --- | --- |
