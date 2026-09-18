@@ -1,6 +1,6 @@
 <div align="center">
 # 🧭 ANUGAMI — Navigation Guide
-**Find your destination. Follow your path.**
+**Find your destination. Follow your path.**. 
 
 A smart navigation guide designed to help users find, explore, and navigate to important places with ease. ANUGAMI focuses on a simple, user-friendly interface for discovering locations and getting clear, reliable navigation guidance.
 
