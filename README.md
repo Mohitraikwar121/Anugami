@@ -3,7 +3,7 @@
 **Find your destination. Follow your path.**. 
 
 A smart navigation guide designed to help users find, explore, and navigate to important places with ease. ANUGAMI focuses on a simple, user-friendly interface for discovering locations and getting clear, reliable navigation guidance.
-
+ 
 [![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](#-technology-stack)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)](#-technology-stack)
 [![Node.js](https://img.shields.io/badge/Node.js-Optional-339933?style=flat&logo=node.js&logoColor=white)](#-technology-stack)
