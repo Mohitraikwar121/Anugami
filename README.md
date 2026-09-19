@@ -1,153 +1,488 @@
 <div align="center">
-# 🧭 ANUGAMI — Navigation Guide
-**Find your destination. Follow your path.**. 
 
-A smart navigation guide designed to help users find, explore, and navigate to important places with ease. ANUGAMI focuses on a simple, user-friendly interface for discovering locations and getting clear, reliable navigation guidance.
- 
-[![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](#-technology-stack)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)](#-technology-stack)
-[![Node.js](https://img.shields.io/badge/Node.js-Optional-339933?style=flat&logo=node.js&logoColor=white)](#-technology-stack)
-[![Maps API](https://img.shields.io/badge/Maps-API-4285F4?style=flat&logo=googlemaps&logoColor=white)](#-technology-stack)
-[![License](https://img.shields.io/badge/License-Educational-green)](#-license)
-[Features](#-features) • [Tech Stack](#-technology-stack) • [Setup](#-installation--setup) • [Usage](#-usage) • [Roadmap](#-future-enhancements)
+# 🧭 ANUGAMI — Navigation Guide
+### **Find your destination. Follow your path.**
+
+A smart and user-friendly navigation guide designed to help users **discover locations, explore destinations, view location details, and navigate efficiently** through a clean and intuitive interface.
+
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Maps%20API-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Maps API">
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Node.js-Optional-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Express.js-Optional-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js">
+  <img src="https://img.shields.io/badge/MongoDB-Optional-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+  <img src="https://img.shields.io/badge/License-Educational-green?style=flat-square" alt="License">
+</p>
+
+**[Features](#-features) • [Architecture](#-architecture) • [Tech Stack](#-technology-stack) • [Setup](#-getting-started) • [Usage](#-usage) • [Roadmap](#-roadmap)**
+
 </div>
 
-## 🎯 Objective
-The main objective of **ANUGAMI** is to simplify navigation by providing users with an accessible digital guide for finding locations and reaching their destinations efficiently.
+# 📌 Overview
 
-## 🚀 Features
-| Feature | Description |
-| --- | --- |
-| 🗺️ **Interactive Navigation** | Helps users navigate between locations |
-| 📍 **Location Discovery** | Find important places and destinations |
-| 🔎 **Search** | Search for a specific location or place |
-| 🧭 **Route Guidance** | Provides directions from the current/source location to the destination |
-| 📱 **User-Friendly Interface** | Simple and intuitive design |
-| ⚡ **Fast & Responsive** | Designed to work smoothly across different screen sizes |
-| 📌 **Location Details** | Displays useful information about selected destinations |
- 
-## 🛠️ Technology Stack
-| Layer | Technology |
-| --- | --- |
-| **Frontend** | React.js / HTML / CSS / JavaScript |
-| **Styling** | CSS / Tailwind CSS |
-| **Maps & Navigation** | Maps API |
-| **Backend** | Node.js & Express.js *(if applicable)* |
-| **Database** | MongoDB *(if applicable)* |
-| **Development Tool** | VS Code |
-| **Version Control** | Git & GitHub |
+**ANUGAMI** is a navigation-focused web application designed to simplify the process of finding and reaching important destinations.
 
-> The backend and database layers are optional and only needed if ANUGAMI is extended with features like saved locations, user accounts, or route history.
+The application provides a straightforward workflow:
 
-## 🔄 How It Works
+> **Search → Discover → Select → Explore → Navigate**
 
-┌─────────────┐     ┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
-│   Search    │ ──▶ │   Select    │ ──▶ │  View Location    │ ──▶ │   Follow    │
-│ Destination │     │  Location   │     │     Details       │     │    Route    │
-└─────────────┘     └─────────────┘     └──────────────────┘     └─────────────┘
+Instead of overwhelming users with unnecessary functionality, ANUGAMI focuses on providing a clear interface for **location discovery and route guidance**.
 
-## 📂 Project Structure
+### 🎯 Core Objectives
+
+* Make destination discovery simple and accessible.
+* Provide clear navigation guidance.
+* Present useful information about selected locations.
+* Maintain a responsive and intuitive user interface.
+* Create a foundation that can be extended with advanced navigation features.
+
+---
+
+# ✨ Features
+
+## 🗺️ Navigation & Discovery
+
+| Feature                     | Description                                               |
+| --------------------------- | --------------------------------------------------------- |
+| 🔎 **Location Search**      | Search for a specific destination or place                |
+| 📍 **Location Discovery**   | Discover important locations and destinations             |
+| 🧭 **Route Guidance**       | Navigate from a source location to a selected destination |
+| 🗺️ **Interactive Maps**    | Visualize locations and navigation information            |
+| 📌 **Location Details**     | View useful information about selected destinations       |
+| 📱 **Responsive Interface** | Designed for different screen sizes                       |
+| ⚡ **Fast Interaction**      | Simple workflows with minimal unnecessary steps           |
+
+# 🔄 How ANUGAMI Works
+
+┌──────────────────┐
+│ Search Destination│
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│  Select Location │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ View Location    │
+│     Details      │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ Choose Navigation│
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│  Follow Route    │
+└──────────────────┘
+
+### User Journey
+
+1. **Search** for a destination.
+2. **Select** the desired location.
+3. **Explore** location information.
+4. **Choose** the navigation option.
+5. **Follow** the displayed route.
+
+# 🏗️ Architecture
+ANUGAMI follows a component-based frontend architecture built around React.
+
+                    ┌──────────────────────┐
+                    │        User          │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │    React Frontend    │
+                    └──────────┬───────────┘
+                               │
+             ┌─────────────────┼──────────────────┐
+             │                 │                  │
+             ▼                 ▼                  ▼
+      ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+      │   Search    │   │    Map      │   │  Location   │
+      │ Components  │   │ Components  │   │   Details   │
+      └──────┬──────┘   └──────┬──────┘   └──────┬──────┘
+             │                 │                  │
+             └─────────────────┼──────────────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │      Maps API        │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Location / Route Data │
+                    └──────────────────────┘
+
+### Optional Full-Stack Architecture
+
+If user accounts, saved locations, route history, or other persistent features are added:
+
+React Frontend
+      │
+      ▼
+Node.js / Express API
+      │
+      ▼
+MongoDB
+
+
+# 🛠️ Technology Stack
+
+| Layer               | Technology           | Purpose                                |
+| ------------------- | -------------------- | -------------------------------------- |
+| **Frontend**        | React.js             | Component-based user interface         |
+| **Language**        | JavaScript (ES6+)    | Application logic and interactions     |
+| **Markup**          | HTML5 / JSX          | Application structure                  |
+| **Styling**         | CSS / Tailwind CSS   | Responsive interface and visual design |
+| **Maps**            | Maps API             | Location and navigation functionality  |
+| **Backend**         | Node.js / Express.js | Optional server-side functionality     |
+| **Database**        | MongoDB              | Optional persistent data storage       |
+| **Editor**          | Visual Studio Code   | Development environment                |
+| **Version Control** | Git / GitHub         | Source control and collaboration       |
+
+> **Note:** The backend and database are optional extensions. They become useful when features such as authentication, saved locations, user preferences, or route history are introduced.
+
+# 📂 Project Structure
+
 ANUGAMI/
 │
 ├── public/
+│   └── ...
 │
 ├── src/
 │   ├── components/
+│   │   ├── SearchBar/
+│   │   ├── MapView/
+│   │   ├── LocationCard/
+│   │   └── RouteCard/
+│   │
 │   ├── pages/
+│   │   └── ...
+│   │
 │   ├── assets/
+│   │   ├── images/
+│   │   └── icons/
+│   │
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
 │
+├── .gitignore
 ├── package.json
-├── README.md
-└── .gitignore
+├── package-lock.json
+└── README.md
 
-### File Responsibilities
-| File / Directory | Purpose |
-| --- | --- |
-| `public/` | Static assets served directly (favicon, index.html, etc.) |
-| `src/components/` | Reusable UI components (search bar, map view, route card, etc.) |
-| `src/pages/` | Top-level page views |
-| `src/assets/` | Images, icons, and other static media |
-| `src/App.jsx` | Root application component |
-| `src/main.jsx` | Application entry point |
-| `src/index.css` | Global styles |
-| `package.json` | Project dependencies and scripts |
+### 📄 File Responsibilities
 
-## ⚙️ Installation & Setup
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
-- npm or yarn
-- A Maps API key (e.g. Google Maps, Mapbox) if map features are enabled
-- Git *(optional, for cloning the repository)*
+| File / Directory  | Responsibility                                   |
+| ----------------- | ------------------------------------------------ |
+| `public/`         | Static assets served directly by the application |
+| `src/components/` | Reusable UI components                           |
+| `src/pages/`      | Top-level application pages                      |
+| `src/assets/`     | Images, icons, and other project assets          |
+| `src/App.jsx`     | Root React component                             |
+| `src/main.jsx`    | React application entry point                    |
+| `src/index.css`   | Global styles                                    |
+| `package.json`    | Dependencies, metadata, and project scripts      |
+| `.gitignore`      | Files and directories excluded from Git          |
 
-### 1. Clone the Repository
+# 🚀 Getting Started
 
-### 2. Navigate to the Project
+## 📋 Prerequisites
 
-### 3. Install Dependencies
+Make sure the following are installed:
 
-### 4. Configure Environment Variables *(if applicable)*
+* **Node.js** — v16 or later recommended
+* **npm** or **yarn**
+* **Git** *(optional)*
+* A Maps API key if map functionality requires one
 
-Create a `.env` file in the project root and add your Maps API key and any backend configuration:
 
-### 5. Start the Development Server
 
-The application will be available at the local URL displayed in the terminal
+## 1️⃣ Clone the Repository
 
-## 🧑‍💻 Usage
-1. Open **ANUGAMI** in your browser.
-2. Search for the required destination.
-3. Select the desired location.
-4. View the available location information.
-5. Choose the navigation option.
-6. Follow the displayed route to reach the destination.
+```bash
+git clone <repository-url>
+```
 
-## 🌟 Future Enhancements
-- [ ] Real-time GPS tracking
-- [ ] Voice-based navigation
-- [ ] Offline maps
-- [ ] Traffic-aware route optimization
-- [ ] Nearby places recommendation
-- [ ] Multiple route suggestions
-- [ ] Emergency location sharing
-- [ ] User authentication
-- [ ] Mobile application
-- [ ] AI-based route recommendations
+## 2️⃣ Navigate to the Project
 
-## 🔐 Security & Privacy
-ANUGAMI handles location-related information responsibly:
-- User location data is only accessed when required for navigation features.
-- Location access is requested with clear, explicit user permission.
-- API keys and sensitive configuration should be stored in environment variables, never committed to version control.
-- No location data should be shared with third parties beyond what's required for the chosen Maps API provider.
+```bash
+cd ANUGAMI
+```
+## 3️⃣ Install Dependencies
 
-## 🤝 Contributing
-Contributions are welcome!
+Using npm:
+
+```bash
+npm install
+```
+
+Or using yarn:
+
+```bash
+yarn install
+```
+
+## 4️⃣ Configure Environment Variables
+
+If the application uses a Maps API key or other environment-specific configuration, create a `.env` file in the project root.
+
+Example:
+
+```env
+VITE_MAPS_API_KEY=your_api_key_here
+```
+
+> ⚠️ Never commit API keys, passwords, tokens, or other sensitive credentials to GitHub.
+
+## 5️⃣ Start the Development Server
+
+```bash
+npm run dev
+```
+
+The terminal will display the local development URL, typically:
+
+```text
+http://localhost:5173
+```
+
+Open the displayed URL in your browser.
+
+---
+
+# 🧑‍💻 Usage
+
+### 🔎 Search
+
+Enter the name of the destination or location you want to find.
+
+### 📍 Select
+
+Choose the desired location from the available results.
+
+### 📌 Explore
+
+View relevant information associated with the selected destination.
+
+### 🧭 Navigate
+
+Select the navigation option to view the route toward the destination.
+
+### 🚶 Follow
+
+Use the displayed route to reach the selected location.
+
+---
+
+# 🖼️ Screenshots
+
+> Add application screenshots here to give visitors a quick visual overview of ANUGAMI.
+
+### 🏠 Home / Search
+
+```text
+screenshots/home.png
+```
+
+### 🗺️ Map View
+
+```text
+screenshots/map.png
+```
+
+### 📍 Location Details
+
+```text
+screenshots/location-details.png
+```
+
+### 🧭 Navigation / Route
+
+```text
+screenshots/navigation.png
+```
+
+Once the screenshots are added to the repository, replace the placeholders above with:
+
+```html
+<img src="screenshots/home.png" alt="ANUGAMI Home" width="800">
+```
+
+---
+
+# 🎨 Design Philosophy
+
+ANUGAMI is designed around five principles:
+
+### 🧭 Clarity
+
+Navigation information should be easy to understand at a glance.
+
+### ⚡ Efficiency
+
+Users should be able to find and navigate to a destination with minimal steps.
+
+### 📱 Responsiveness
+
+The interface should adapt to desktop, tablet, and mobile screen sizes.
+
+### 🧩 Modularity
+
+Reusable React components make the application easier to maintain and extend.
+
+### 👤 User-Centric Design
+
+The interface prioritizes simple interactions and avoids unnecessary complexity.
+
+---
+
+# 🔐 Security & Privacy
+
+Location-based applications require careful handling of user data.
+
+ANUGAMI follows these principles:
+
+* 📍 Request location access only when required.
+* 🔐 Keep API keys and sensitive configuration outside the source code.
+* 🚫 Never commit `.env` files containing secrets.
+* 🛡️ Use environment variables for API configuration.
+* 📊 Only collect location-related information necessary for the application's functionality.
+* 🔗 Follow the privacy and data policies of the selected Maps API provider.
+
+> **Important:** Actual data handling and privacy behavior depend on the APIs and services integrated into the final implementation.
+
+---
+
+# 🗺️ Roadmap
+
+Future improvements can expand ANUGAMI from a basic navigation guide into a more complete navigation platform.
+
+## Phase 1 — Navigation
+
+* [ ] Real-time GPS tracking
+* [ ] Multiple route suggestions
+* [ ] Turn-by-turn navigation
+* [ ] Traffic-aware route optimization
+* [ ] Nearby places discovery
+
+## Phase 2 — Smart Features
+
+* [ ] Voice-based navigation
+* [ ] AI-powered route recommendations
+* [ ] Personalized destination suggestions
+* [ ] Intelligent nearby-place recommendations
+* [ ] Route preference customization
+
+## Phase 3 — Accessibility & Reliability
+
+* [ ] Offline maps
+* [ ] Low-connectivity support
+* [ ] Emergency location sharing
+* [ ] Accessibility-focused navigation
+* [ ] Voice accessibility improvements
+
+## Phase 4 — Full-Stack Platform
+
+* [ ] User authentication
+* [ ] Saved locations
+* [ ] Favorite destinations
+* [ ] Route history
+* [ ] User profiles
+* [ ] Cloud synchronization
+* [ ] Mobile application
+
+---
+
+# 📊 Project Information
+
+| Property               | Details                                     |
+| ---------------------- | ------------------------------------------- |
+| **Project Name**       | ANUGAMI                                     |
+| **Type**               | Navigation Guide                            |
+| **Category**           | Web Development                             |
+| **Primary Technology** | React.js                                    |
+| **Language**           | JavaScript                                  |
+| **Core Functionality** | Location discovery and navigation           |
+| **Maps Integration**   | Maps API                                    |
+| **Backend**            | Optional                                    |
+| **Database**           | Optional                                    |
+| **Interface**          | Responsive Web UI                           |
+| **Status**             | 🚧 In Development / Customise as applicable |
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+### Contribution Workflow
+
+```text
 Fork Repository
       ↓
-Create a New Branch
+Create Feature Branch
       ↓
-Make Your Changes
+Make Changes
       ↓
-Commit Your Changes
+Test Changes
       ↓
-Push the Branch
+Commit Changes
       ↓
-Open a Pull Request
+Push Branch
+      ↓
+Open Pull Request
+```
 
-When contributing, please keep changes focused, follow the existing project structure, and confirm existing functionality still works before opening a PR.
+### Contribution Guidelines
 
-## 📄 License
-This project is developed for **educational and project purposes**. A suitable open-source license can be added based on the project's requirements.
+* Keep changes focused on a specific feature or fix.
+* Follow the existing project structure.
+* Maintain consistent coding conventions.
+* Test existing functionality after making changes.
+* Write clear and meaningful commit messages.
+* Update documentation when adding major features.
 
-## 👨‍💻 Project Info
-| Property | Details |
-| --- | --- |
-| **Project Name** | ANUGAMI |
-| **Type** | Navigation Guide |
-| **Purpose** | Smart and user-friendly location discovery and navigation |
+---
+
+# 📄 License
+
+This project is developed for **educational and project purposes**.
+
+If the project is later distributed publicly, an appropriate open-source license such as **MIT** can be added based on the project's requirements.
+
+---
+
+# 🌟 Why ANUGAMI?
+
+ANUGAMI aims to make navigation feel **simple, accessible, and intuitive**.
+
+Rather than treating maps only as a visual tool, the project focuses on creating a straightforward user journey:
+
+> **Discover → Understand → Navigate → Reach**
+
+---
+
 <div align="center">
-**ANUGAMI — Find your destination. Follow your path.**
+
+## 🧭 ANUGAMI
+
+### **Find your destination. Follow your path.**
+
+Built with ❤️ using React and modern web technologies.
+
+⭐ **If you find this project useful, consider giving it a star!**
+
 </div>
