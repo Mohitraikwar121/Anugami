@@ -5,7 +5,7 @@
 
 A smart and user-friendly navigation guide designed to help users **discover locations, explore destinations, view location details, and navigate efficiently** through a clean and intuitive interface.
 
-<p>
+<p> 
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
