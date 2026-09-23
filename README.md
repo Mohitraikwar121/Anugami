@@ -1,5 +1,5 @@
 <div align="center">
-  
+    
 # 🧭 ANUGAMI — Navigation Guide
 ### **Find your destination. Follow your path.**
 
