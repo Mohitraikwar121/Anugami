@@ -1,0 +1,58 @@
+// use prisma-8
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Campus {
+  id           String        @id @default(cuid())
+  name         String
+  centerLat    Float
+  centerLng    Float
+  buildings    Building[]
+  entrances    Entrance[]
+  destinations Destination[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Building {
+  id           String        @id @default(cuid())
+  name         String
+  latitude     Float
+  longitude    Float
+  description  String?
+  floors       Int?
+  campusId     String
+  campus       Campus        @relation(fields: [campusId], references: [id], onDelete: Cascade)
+  destinations Destination[]
+}
+
+model Entrance {
+  id        String   @id @default(cuid())
+  name      String
+  latitude  Float
+  longitude Float
+  campusId  String
+  campus    Campus   @relation(fields: [campusId], references: [id], onDelete: Cascade)
+}
+
+model Destination {
+  id          String    @id @default(cuid())
+  name        String
+  category    String
+  latitude    Float
+  longitude   Float
+  description String?
+  floor       Int?
+  accessible  Boolean   @default(true)
+  aliases     String[]
+  campusId    String
+  buildingId  String?
+  campus      Campus    @relation(fields: [campusId], references: [id], onDelete: Cascade)
+  building    Building? @relation(fields: [buildingId], references: [id], onDelete: SetNull)
+}
